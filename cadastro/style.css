@@ -14,7 +14,7 @@ body{
 }
 
 /* conteudo */
-.caixa-central { 
+.caixa-central {
     display: flex;
     justify-content: center;
     align-items: center;
