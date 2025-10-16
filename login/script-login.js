@@ -6,18 +6,19 @@ document.querySelector("#entrar").addEventListener("click", function (e){
     var email = document.querySelector("#email").value;
     var senha = document.querySelector("#senha").value;
     
-    var usuarioSalvo = JSON.parse(localStorage.getItem("usuario"));
+    //pega usuários cadastrados 
+    var usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
+    var usuarioSalvo = usuarios.find(u => u.email === email && u.senha === senha);
+    
     if(!usuarioSalvo){
-        alert("Nenhum usuário cadastrado!");
+        alert("Nenhum usuário cadastrado ou e-mail/senha inválidos!");
         return;
     }
-    if(email === usuarioSalvo.email && senha === usuarioSalvo.senha){
-        alert(`Bem-vindo, ${usuarioSalvo.nome}!`);
-        window.location.href = "../home/home.html"; //redireciona para a pagina pricipal
-    }else {
-        alert("E-mail ou senha invalidos!");
-    }
+
+    alert(`Bem-vindo, ${usuarioSalvo.nome}!`);
+    window.location.href = "../home/home.html"; //redireciona para a pagina pricipal
+    
 });
 
 //Botão cadastre-se da pagina
