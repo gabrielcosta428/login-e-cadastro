@@ -1,15 +1,17 @@
 /* Importa a fonte Urbanist do Google Fonts */
+/*2025*/
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
 
 /*Fonte e fundo*/
 
-body{
-    font-family: Urbanist; 
+body {
+    font-family: Urbanist;
     background: #E87707;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+
 }
 
 /* conteudo */
@@ -23,124 +25,103 @@ body{
 
 /* formato do conteudo */
 .card {
-    position: absolute;
+    position: relative;
     background: #F3F3F3;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow:0 4px 12px
-    rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: visible;
     text-align: center;
     width: 320px;
     z-index: 1;
 }
+
 /*Orelhas */
 
 .ears {
-  position: absolute;
-  top: -32.9%;   
-  left: 50%;
-  transform: translateX(-50%);
-  width: 400px; 
-  z-index: -1;
+  position: absolute !important;
+  top: -31.7% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 400px !important;
+  z-index: -1 !important;
 }
 
 /* Rabo*/
 .tail {
-  position: absolute;
-  bottom: 0%;     
-  left: 100%;      
-  width: 100px;
-  z-index: 1;
+    position: absolute;
+    bottom: 0%;
+    left: 100%;
+    width: 100px;
+    z-index: -1;
 }
-
 
 /*titulo e subtitulo */
 
 .card h2 {
+    margin-top: 1.5rem;
     margin-bottom: 0;
-    font-weight: 80px;
     color: #000000;
 }
+
 .card p {
-    margin-top: 0; 
-    margin-bottom: 3rem;
+    margin-top: 0;
     color: #818181;
     font-size: 0.9rem;
-    
+    font-weight: bolder;
 }
 
 /* formato das entradas de texto */
 .card input {
     width: 100%;
     padding: 0.9rem;
-    margin-bottom: 1rem;
-    border:1px solid #B8B8B8;
+    margin-bottom: 0.9rem;
+    border: 1px solid #B8B8B8;
     background: #E6E6E6;
     border-radius: 8px;
     font-size: 0.9rem;
     margin-left: 0;
     margin-right: 0;
 }
+
 .card form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* botão entrar */
-.card #entrar {
+/* Botão Entrar */
+
+.card button {
     width: 110%;
     padding: 1rem;
+    background: #f97316;
     border: none;
     border-radius: 8px;
     color: white;
-    font-weight: 30px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin bottom: 1rem;
-}
-.card #entrar {
-    background-color: #f97316;
-}
-.card #entrar:hover {
-    background-color: #EA580C;
-}
-
-/* Botão Cadastrase*/
-.card #cadastro {
-    width: 110%;
-    padding: 1rem;
-    border:3px solid;
-    border-radius: 8px;
-    color: #4093BD;
-    font-weight: 30px;
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s;
     margin: 1rem;
 }
-.card #cadastro {
-    background-color: white;
-}
-.card #cadastro:hover {
-    background: #4093BD;
-    color: white;
-}
 
+.card button:hover {
+    background-color: #EA580C;
+}
 
 /*link de login */
-.card a{
+.card a {
     display: block;
-    margin-top: 12px;
+    margin-top: 0;
     font-size: 0.85rem;
     color: #818181;
     text-decoration: none;
-    font-weight: 30px;
+    font-weight: bolder;
 }
+
 .card a:hover {
     text-decoration: underline;
-} 
+}
 
 /* imagem de fundo */
 body::before {
@@ -150,6 +131,50 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("../assets/fundo.png") 80% center / 102% no-repeat;
-    z-index: -1; 
+    background-image: url("fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/*olho, mostar senha*/
+.card i:nth-of-type(1) {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 8%;
+    margin-top: 34%;
+    color: #9a9999
+}
+
+.card i:nth-of-type(2) {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 8%;
+    margin-top: 50%;
+    color: #9a9999
+}
+
+/* RESPONSIVO */
+@media(max-width:450px) {
+    .colaborador img {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    html,
+    body {
+        overflow: hidden;
+        /* trava rolagem só no mobile */
+        height: 100%;
+        width: 100%;
+    }
+}
+/* RESPONSIVO (vem DEPOIS) */
+@media(max-width: 450px) {
+  .ears {
+    top: -31.7% !important;
+  }
 }
