@@ -3,15 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
 
 /*Fonte e fundo*/
-
 body {
     font-family: Urbanist;
     background: #E87707;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-
+    height: 100%;
+    margin: 2rem;
 }
 
 /* conteudo */
@@ -20,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    margin-top: 5rem;
 }
 
 /* formato do conteudo */
@@ -30,21 +28,19 @@ body {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: visible;
     text-align: center;
-    width: 320px;
-    z-index: 1;
+    width: 20rem;
+    max-height: 27rem;
+    z-index: 10;
 }
 
 /*Orelhas */
 
 .ears {
-  position: absolute !important;
-  top: -31.7% !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 400px !important;
-  z-index: -1 !important;
+  position: absolute;
+  top: -15.3%;
+  transform: translateX(-50%);
+  width: 24rem;
 }
 
 /* Rabo*/
@@ -52,20 +48,26 @@ body {
     position: absolute;
     bottom: 0%;
     left: 100%;
-    width: 100px;
-    z-index: -1;
+    width: 6.25rem;
+}
+
+/* Rabo em baixo */
+.tail-bottom {
+    visibility: hidden;
+    width: 0;
 }
 
 /*titulo e subtitulo */
 
 .card h2 {
-    margin-top: 1.5rem;
-    margin-bottom: 0;
+    margin-top: 1rem;
+    margin-bottom: 80px;
     color: #000000;
 }
 
 .card p {
-    margin-top: 0;
+    margin-top: -5rem;
+    margin-bottom: 1rem;
     color: #818181;
     font-size: 0.9rem;
     font-weight: bolder;
@@ -75,13 +77,14 @@ body {
 .card input {
     width: 100%;
     padding: 0.9rem;
-    margin-bottom: 0.9rem;
+    margin-bottom: 1.2rem;
     border: 1px solid #B8B8B8;
     background: #E6E6E6;
     border-radius: 8px;
     font-size: 0.9rem;
     margin-left: 0;
     margin-right: 0;
+    margin-top: -2%;
 }
 
 .card form {
@@ -102,7 +105,7 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 1rem;
+    margin: 0.5rem;
 }
 
 .card button:hover {
@@ -112,7 +115,7 @@ body {
 /*link de login */
 .card a {
     display: block;
-    margin-top: 0;
+    margin-top: 1.8rem;
     font-size: 0.85rem;
     color: #818181;
     text-decoration: none;
@@ -144,7 +147,7 @@ body::before {
     cursor: pointer;
     position: absolute;
     right: 8%;
-    margin-top: 34%;
+    margin-top: 31.5%;
     color: #9a9999
 }
 
@@ -153,28 +156,62 @@ body::before {
     cursor: pointer;
     position: absolute;
     right: 8%;
-    margin-top: 50%;
+    margin-top: 47%;
     color: #9a9999
 }
 
 /* RESPONSIVO */
-@media(max-width:450px) {
+@media screen and (max-width: 768px) {
     .colaborador img {
         width: 100%;
         flex-direction: column;
     }
 
-    html,
     body {
         overflow: hidden;
-        /* trava rolagem só no mobile */
         height: 100%;
-        width: 100%;
+        width: 95%;
+        margin: auto;
     }
+
+    .caixa-central {
+        margin-top: 5rem;
+    }
+
+    .ears {
+        top: -12.8%;   
+        width: 20rem; 
+    }
+
+    .tail {
+        visibility: hidden;
+        width: 0;
+    }
+
+    .tail-bottom {
+        visibility: visible;
+        position: absolute;
+        bottom: 0%;
+        top: 100%;   
+        transform: translateX(-50%);
+        width: 6.25rem; 
+    }
+
+    .card i:nth-of-type(1) {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 8%;
+    margin-top: 32.5%;
+    color: #9a9999
+    }
+
+    .card i:nth-of-type(2) {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 8%;
+    margin-top: 48.2%;
+    color: #9a9999
 }
-/* RESPONSIVO (vem DEPOIS) */
-@media(max-width: 450px) {
-  .ears {
-    top: -31.7% !important;
-  }
 }

@@ -36,9 +36,9 @@ body{
 /*Orelhas */
 .ears {
     position: absolute;
-    top: -16%;   
+    top: -15.3%;   
     transform: translateX(-50%);
-    width: 25rem; 
+    width: 24rem; 
 }
 
 /* Rabo*/
