@@ -36,7 +36,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     alert("Cadastro realizado com sucesso!");
-    window.location.href = "../login-usuario/index02.html"
+    window.location.href = "../pages/login.html";
 
     
 

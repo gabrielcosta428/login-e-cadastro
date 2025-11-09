@@ -21,14 +21,14 @@ document.querySelector("#entrar").addEventListener("click", function (e){
     alert(`Bem-vindo, ${usuarioSalvo.nome}!`);
     
     // Redireciona para a página principal 
-    window.location.href = "../pagina-home/home.html"; 
+    window.location.href = "./home.html"; 
 });
  
 
 //Botão cadastre-se da pagina
 document.querySelector("#cadastro").addEventListener("click", function (e) {
     e.preventDefault();
-    window.location.href = "../cadastro-usuario/index01.html"; 
+    window.location.href = "../pages/register.html"; 
 });
 
 // mostar e ocultar senha
